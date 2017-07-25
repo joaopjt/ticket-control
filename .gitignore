@@ -57,3 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
+# Knex querybuilder config file
+knexfile.js
