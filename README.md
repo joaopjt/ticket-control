@@ -8,7 +8,7 @@ To run the project, first, clone the repo and install dependencies with
 Then, you can run the project with node (recommend the v7)
 ``node index``
 
-The project will run by default in *localhost:3000*. To change this, go to `server/globals.js` and change the appGlobals.server Object.
+The project will run by default in *localhost:8000*. To change this, go to `server/globals.js` and change the appGlobals.server Object.
 
 ## Query Builder
 To Query Builder, i'm using the Knex.js (see [docs here](http://knexjs.org/)).
