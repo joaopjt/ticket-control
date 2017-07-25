@@ -9,6 +9,7 @@
     "consign": "^0.1.6",
     "crypto": "^0.0.3",
     "hapi": "^16.5.0",
+    "hapi-require-https": "^2.1.0",
     "knex": "^0.13.0",
     "mysql": "^2.13.0",
     "object-assign": "^4.1.1"

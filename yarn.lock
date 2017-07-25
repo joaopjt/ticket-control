@@ -252,6 +252,10 @@ global-prefix@^0.1.4:
     is-windows "^0.2.0"
     which "^1.2.12"
 
+hapi-require-https@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/hapi-require-https/-/hapi-require-https-2.1.0.tgz#440e364cd42e979e02df05e91adfd9da03b4aa72"
+
 hapi@^16.5.0:
   version "16.5.0"
   resolved "https://registry.yarnpkg.com/hapi/-/hapi-16.5.0.tgz#89e4770f0034e3b69ee99ed929cc5b573805f303"

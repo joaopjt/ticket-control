@@ -1,6 +1,6 @@
 // HTTPS request force
 const requireHttps = require('hapi-require-https');
-const https = global.app.https;
+const https = App.https;
 
 module.exports = function (Server) {
   if (https && https.enable) {

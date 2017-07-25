@@ -52,6 +52,7 @@ typings/
 *.tgz
 
 # Yarn Integrity file
+node_modules/.yarn-integrity
 .yarn-integrity
 
 # dotenv environment variables file

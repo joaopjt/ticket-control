@@ -6,7 +6,7 @@ module.exports = {
     // Load server resources
     consign({ 
         cwd: path.resolve(__dirname, '../'),
-        verbose: !global.app.isProd 
+        verbose: !App.isProd 
       })
       .include('middlewares')
       .then('routes')
