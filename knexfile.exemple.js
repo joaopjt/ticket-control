@@ -9,6 +9,12 @@ module.exports = {
       user: 'user',
       pass: 'pass',
       database: 'database'
+    },
+    migrations: {
+      directory: './server/migrations/'
+    },
+    seeds: {
+      directory: './server/seeds/'
     }
   }
 
