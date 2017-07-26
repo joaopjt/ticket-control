@@ -6,7 +6,7 @@ exports.up = function(knex, Promise) {
     table.string('email');
     table.string('pass');
     table.string('doc-number');
-    table.timestamps();
+    table.timestamps(true, true);
   }).then(function() {
     console.log('Table "users" created with success!');
   }).catch(function(err) {
