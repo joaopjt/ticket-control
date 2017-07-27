@@ -3,10 +3,11 @@ const handlers = require('../controllers/endpoints/tickets');
 module.exports = function(app) {
   app.route({
     method: 'GET',
-    path: '/tickets',
+    path: '/tickets/{param*}',
     handler: {
       directory: {
-        path: 'views/tickets'
+        path: 'views/tickets',
+        index: true
       }
     }
   })
