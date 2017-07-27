@@ -7,7 +7,7 @@ module.exports = function(app) {
     handler: {
       directory: {
         path: 'views/tickets',
-        index: true
+        etagMethod: false
       }
     }
   })

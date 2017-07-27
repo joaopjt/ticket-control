@@ -3,6 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 module.exports = {
+  cache: false,
   devServer: {
     compress: true,
     port: process.env.PORT || 3000

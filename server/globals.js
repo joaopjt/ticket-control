@@ -9,7 +9,7 @@ var DB = knex(knexConfig);
 var appGlobals = {
   isProd: isProd,
   server: {
-    host: (isProd) ? '0.0.0.0' : 'localhost',
+    host: (isProd) ? '0.0.0.0' : '0.0.0.0',
     port: (isProd) ? process.env.PORT : 8000,
     routes: {
       files: {

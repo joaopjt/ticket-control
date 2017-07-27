@@ -16781,9 +16781,7 @@ module.exports = __webpack_require__(477);
 
 
 var Instascan = __webpack_require__(193);
-
-var video = document.querySelector('#preview');
-var scanner = new Instascan.Scanner({ continuous: true, video: video });
+var scanner = new Instascan.Scanner({ continuous: true, video: document.getElementById('preview') });
 
 Instascan.Camera.getCameras().then(function (cameras) {
   if (cameras.length > 0) {

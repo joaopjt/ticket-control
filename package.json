@@ -19,7 +19,8 @@
     "instascan": "^1.0.0",
     "knex": "^0.13.0",
     "mysql": "^2.13.0",
-    "object-assign": "^4.1.1"
+    "object-assign": "^4.1.1",
+    "vue": "^2.4.2"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
