@@ -8,7 +8,8 @@ module.exports = {
         cwd: path.resolve(__dirname, '../'),
         verbose: !App.isProd 
       })
-      .include('middlewares')
+      .include('plugins')
+      .then('middlewares')
       .then('routes')
       .into(Server);
   }
