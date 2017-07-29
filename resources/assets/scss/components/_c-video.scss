@@ -1,0 +1,51 @@
+.c-video {
+  &__holder {
+    display: block;
+
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__subtitle {
+    color: $neutral-color-5;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  &__scan  {
+    border: 3px solid $black;
+    height: 300px;
+    margin: 45px auto 0;
+    overflow: hidden;
+    position: relative;
+    width: 300px;
+    z-index: 1;
+
+    &:after {
+      background-color: $white;
+      content: '';
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+
+    &.active {
+      border-color: #0f0; // Save this into a sass var that after
+    }
+  }
+
+  &__preview {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scaleX(-1) !important;
+  }
+}

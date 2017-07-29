@@ -3,7 +3,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  cache: false,
   devServer: {
     compress: true,
     port: process.env.PORT || 3000
@@ -17,9 +16,6 @@ module.exports = {
   output: {
     path: process.cwd() + '/resources/assets',
     filename: 'js/bundle.js'
-  },
-  node: {
-    fs: "empty"
   },
   module: {
     rules: [
@@ -38,12 +34,20 @@ module.exports = {
       }
     ]
   },
+  node: {
+    fs: "empty"
+  },
   plugins: [
     new ExtractTextPlugin('css/[name].css')
-  ]
+  ],
+  resolve: {
+    alias: {
+      vue: 'vue/dist/vue.js'
+    }
+  }
 }
 
-if(process.env.NODE_ENV === 'production') {
+if(process.env.NODE_ENV === 'prod') {
   module.exports.plugins.push(
     new webpack.optimize.UglifyJsPlugin()
   )

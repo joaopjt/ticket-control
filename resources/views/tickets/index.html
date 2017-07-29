@@ -3,9 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Instascan test</title>
-    <script src="/assets/js/bundle.js"></script>
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <script src="/assets/js/bundle.js" defer></script>
   </head>
-  <body id="app">
-    <video id="preview" style="margin: 100px auto 0; max-width: 500px; height: 450px; width: 100%;"></video>
+  <body>
+    <div id="app" class="l-main">
+      <div class="c-video__holder">
+        <h1 class="c-video__title">Film the ticket QR Code</h1>
+        <p class="c-video__subtitle">OBS: You will need to give the browser permission to access your camera.</p>
+        
+        <div class="c-video__scan" data-preview>
+          <video id="preview" class="c-video__preview"></video>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
