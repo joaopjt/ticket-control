@@ -5,9 +5,8 @@ module.exports = function(app) {
     path: '/',
     config: { auth: false },
     handler: {
-      directory: {
-        path: 'views',
-        etagMethod: false
+      file: {
+        path: 'views/index.html'
       }
     }
   });
