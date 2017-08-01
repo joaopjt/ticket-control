@@ -49,3 +49,9 @@
     transform: translate(-50%, -50%) scaleX(-1) !important;
   }
 }
+
+@media screen and (max-width: 580px) {
+  .c-video__scan {
+    width: 100%;
+  }
+}

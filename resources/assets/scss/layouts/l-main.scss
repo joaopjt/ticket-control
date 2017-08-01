@@ -1,6 +1,13 @@
 .l-main {
+  box-sizing: border-box;
   display: block;
   margin: 0 auto;
   max-width: 960px;
   width: 100%;
+}
+
+@media screen and (max-width: 580px) {
+  .l-main {
+    padding: 0 15px;
+  }
 }

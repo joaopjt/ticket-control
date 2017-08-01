@@ -2,10 +2,15 @@ body {
   margin: 0; }
 
 .l-main {
+  box-sizing: border-box;
   display: block;
   margin: 0 auto;
   max-width: 960px;
   width: 100%; }
+
+@media screen and (max-width: 580px) {
+  .l-main {
+    padding: 0 15px; } }
 
 .c-video__holder {
   display: block; }
@@ -46,3 +51,7 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) scaleX(-1) !important; }
+
+@media screen and (max-width: 580px) {
+  .c-video__scan {
+    width: 100%; } }
