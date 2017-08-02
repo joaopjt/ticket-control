@@ -17,6 +17,7 @@
   }
 
   &__scan  {
+    background-color: $black;
     border: 3px solid $black;
     height: 300px;
     margin: 45px auto 0;
@@ -37,8 +38,12 @@
       z-index: 1;
     }
 
-    &.active {
-      border-color: #0f0; // Save this into a sass var that after
+    &.scanning {
+      border-color: $yellow;
+    }
+
+    &.scanned {
+      border-color: #green; 
     }
   }
 
