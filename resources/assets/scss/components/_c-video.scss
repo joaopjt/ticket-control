@@ -23,6 +23,8 @@
     margin: 45px auto 0;
     overflow: hidden;
     position: relative;
+    transition: width 600ms ease-out 400ms, height 600ms ease-out 400ms, border-width 100ms 900ms;
+    -webkit-transition: width 600ms ease-out 400ms, height 600ms ease-out 400ms, border-width 100ms 900ms;
     width: 300px;
     z-index: 1;
 
@@ -43,7 +45,10 @@
     }
 
     &.scanned {
-      border-color: $green; 
+      border-color: $green;
+      border-width: 0px;
+      height: 0;
+      width: 0;
     }
 
     &.hidden {
@@ -56,17 +61,20 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) scaleX(-1) !important;
+    -ms-transform: translate(-50%, -50%) scaleX(-1) !important;
+    -webkit-transform: translate(-50%, -50%) scaleX(-1) !important;
   }
 
-  .c-video__options {
+  &__options {
     display: block;
+    margin: 0 auto;
     max-width: 300px;
-    padding: 10px 0;
     text-align: center;
     width: 100%;
 
     button {
       display: inline-block;
+      margin: 10px 0;
     }
   }
 

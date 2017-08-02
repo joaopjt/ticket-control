@@ -2,15 +2,14 @@ import axios from 'axios';
 import Instascan from 'instascan';
 import Vue from 'vue';
 
-let hashTest = '2cf05d94db';
-
 let app = new Vue({
   el: '#app',
   data: {
     scanner: null,
     activeCameraId: null,
     cameras: [],
-    switch: null
+    switch: false,
+    errors: []
   },
   mounted: function () {
     let self = this;
@@ -23,6 +22,10 @@ let app = new Vue({
       mirror: false
     });
 
+    this.scanner.addListener('active', () => {
+      holder.classList.add('scanning');
+    });
+
     this.scanner.addListener('scan', (content, image) => {
       holder.classList.add('scanned');
       holder.classList.remove('scanning');
@@ -31,8 +34,11 @@ let app = new Vue({
         scan: content
       }).then((res) => {
         if (res.code === 204) {
-          holder.classList.add('hidden');
-          self.messages = {}
+          holder.classList.add('success');
+          self.errors.push({
+            message: 'The ticket is valid!',
+            type: 'success'
+          });
         }
       }).catch((err) => {
         console.log('Error in validation request: ', err);
@@ -49,7 +55,6 @@ let app = new Vue({
 
         self.activeCameraId = cameras[0].id;
         self.scanner.start(cameras[0]);
-        holder.classList.add('scanning');
       } else {
         console.error('No cameras found.');
       }

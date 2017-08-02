@@ -17473,15 +17473,14 @@ var _vue2 = _interopRequireDefault(_vue);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var hashTest = '2cf05d94db';
-
 var app = new _vue2.default({
   el: '#app',
   data: {
     scanner: null,
     activeCameraId: null,
     cameras: [],
-    switch: null
+    switch: false,
+    errors: []
   },
   mounted: function mounted() {
     var self = this;
@@ -17494,6 +17493,10 @@ var app = new _vue2.default({
       mirror: false
     });
 
+    this.scanner.addListener('active', function () {
+      holder.classList.add('scanning');
+    });
+
     this.scanner.addListener('scan', function (content, image) {
       holder.classList.add('scanned');
       holder.classList.remove('scanning');
@@ -17502,8 +17505,11 @@ var app = new _vue2.default({
         scan: content
       }).then(function (res) {
         if (res.code === 204) {
-          holder.classList.add('hidden');
-          self.messages = {};
+          holder.classList.add('success');
+          self.errors.push({
+            message: 'The ticket is valid!',
+            type: 'success'
+          });
         }
       }).catch(function (err) {
         console.log('Error in validation request: ', err);
@@ -17520,7 +17526,6 @@ var app = new _vue2.default({
 
         self.activeCameraId = cameras[0].id;
         self.scanner.start(cameras[0]);
-        holder.classList.add('scanning');
       } else {
         console.error('No cameras found.');
       }
@@ -65519,7 +65524,7 @@ return Vue$3;
 /* 504 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed: ModuleBuildError: Module build failed: \r\nundefined\r\n^\r\n      File to import not found or unreadable: C:\\Users\\novahaus\\Documents\\Estudo\\ticket-control\\resources\\assets\\scss\\components\\_c-video.scss.\nParent style sheet: stdin\r\n      in C:\\Users\\novahaus\\Documents\\Estudo\\ticket-control\\resources\\assets\\scss\\app.scss (line 10, column 1)\n    at runLoaders (C:\\Users\\novahaus\\Documents\\Estudo\\ticket-control\\node_modules\\webpack\\lib\\NormalModule.js:194:19)\n    at C:\\Users\\novahaus\\Documents\\Estudo\\ticket-control\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at C:\\Users\\novahaus\\Documents\\Estudo\\ticket-control\\node_modules\\loader-runner\\lib\\LoaderRunner.js:230:18\n    at context.callback (C:\\Users\\novahaus\\Documents\\Estudo\\ticket-control\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (C:\\Users\\novahaus\\Documents\\Estudo\\ticket-control\\node_modules\\sass-loader\\lib\\loader.js:55:13)\n    at Object.<anonymous> (C:\\Users\\novahaus\\Documents\\Estudo\\ticket-control\\node_modules\\async\\dist\\async.js:2244:31)\n    at Object.callback (C:\\Users\\novahaus\\Documents\\Estudo\\ticket-control\\node_modules\\async\\dist\\async.js:906:16)\n    at options.error (C:\\Users\\novahaus\\Documents\\Estudo\\ticket-control\\node_modules\\node-sass\\lib\\index.js:294:32)");
 
 /***/ })
 /******/ ]);
