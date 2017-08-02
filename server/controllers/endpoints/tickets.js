@@ -1,9 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 const Boom = require('boom');
+const crypt = require('crypto-js/sha256');
+const axios = require('axios');
 
 module.exports = {
-  post(req, res) {
+  validate(req, res) {
     const data = req.payload;
     const file = data.qr;
 
@@ -35,5 +37,31 @@ module.exports = {
         res(reply);
       }
     }
+  },
+
+  get(req, res) {
+    let hash = (typeof req.query.hash === 'string') ? req.query.hash : res({ message: 'Invalid hash sended', details: 'Request hash should be an string.'}).code(400);
+
+    axios.request('https://chart.googleapis.com/chart', {
+      params: {
+        cht: 'qr',
+        chl: hash,
+        chs: '300x300'
+      },
+      responseType: 'arraybuffer'
+    }).then(function(r) {
+
+      res(r.data)
+        .type('image/png')
+        .encoding('binary');
+
+    }).catch(function(err) {
+      
+      res({
+        message: 'Error at get QR code image.',
+        details: err
+      }).code(500);
+
+    });
   }
 }

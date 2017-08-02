@@ -4,13 +4,14 @@ module.exports = function(app) {
   app.route({
     method: 'POST',
     path: '/tickets',
-    config: {
-      payload: {
-        output: 'stream',
-        parse: true,
-        allow: 'multipart/form-data'
-      }
-    },
-    handler: handlers.post
+    handler: handlers.validate
   });
+
+  app.route({
+    method: 'GET',
+    path: '/getTicket',
+    handler: handlers.get
+  });
+
+
 }
