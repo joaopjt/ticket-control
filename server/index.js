@@ -30,6 +30,6 @@ function serverListeners(Server) {
   });
 
   Server.on('stop', function(err) {
-    console.warn(err);
+    console.warn('Server stoped. ', err);
   });
 }
