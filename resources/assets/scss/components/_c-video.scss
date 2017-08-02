@@ -43,7 +43,11 @@
     }
 
     &.scanned {
-      border-color: #green; 
+      border-color: $green; 
+    }
+
+    &.hidden {
+      display: none !important;
     }
   }
 
@@ -52,6 +56,34 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) scaleX(-1) !important;
+  }
+
+  .c-video__options {
+    display: block;
+    max-width: 300px;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+
+    button {
+      display: inline-block;
+    }
+  }
+
+  &__tests {
+    display: block;
+    font-size: 0;
+    list-style: none;
+    margin-top: 50px;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__test {
+    display: inline-block;
+    vertical-align: top;
+    width: 33%
   }
 }
 

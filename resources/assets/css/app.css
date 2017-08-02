@@ -67,13 +67,38 @@ body {
   .c-video__scan.scanning {
     border-color: #ff0; }
   .c-video__scan.scanned {
-    border-color: #green; }
+    border-color: #0f0; }
+  .c-video__scan.hidden {
+    display: none !important; }
 
 .c-video__preview {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) scaleX(-1) !important; }
+
+.c-video .c-video__options {
+  display: block;
+  max-width: 300px;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%; }
+  .c-video .c-video__options button {
+    display: inline-block; }
+
+.c-video__tests {
+  display: block;
+  font-size: 0;
+  list-style: none;
+  margin-top: 50px;
+  padding: 0;
+  text-align: center;
+  width: 100%; }
+
+.c-video__test {
+  display: inline-block;
+  vertical-align: top;
+  width: 33%; }
 
 @media screen and (max-width: 580px) {
   .c-video__scan {

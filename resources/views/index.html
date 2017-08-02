@@ -13,9 +13,19 @@
         <h1 class="c-video__title">Film the ticket QR Code</h1>
         <p class="c-video__subtitle">OBS: You will need to give the browser permission to access your camera.</p>
         
-        <div class="c-video__scan" data-preview>
+        <div class="c-video__scan" data-scan>
           <video id="preview" class="c-video__preview"></video>
         </div>
+
+        <div class="c-video__option">
+          <button data-scan-switch>Switch camera</button>          
+        </div>
+
+        <ul class="c-video__tests">
+          <li class="c-video__test"><img src="getTicket?hash=123123123123123123" width="200"></li>
+          <li class="c-video__test"><img src="getTicket?hash=123123123123123123" width="200"></li>
+          <li class="c-video__test"><img src="getTicket?hash=123123123123123123" width="200"></li>
+        </ul>
       </div>
     </div>
   </body>
