@@ -96,7 +96,19 @@
 }
 
 @media screen and (max-width: 580px) {
-  .c-video__scan {
-    width: 100%;
+  .c-video{
+    &__scan {
+      width: 100%;
+    }
+
+    &__test {
+      display: block;
+      margin: 30px auto;
+      width: auto;
+
+      img {
+        min-width: 290px
+      }
+    }
   }
 }

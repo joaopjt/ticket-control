@@ -31,7 +31,7 @@ let app = new Vue({
       holder.classList.remove('scanning');
 
       axios.post('/tickets', {
-        scan: content
+        ticket: content
       }).then((res) => {
         if (res.code === 204) {
           holder.classList.add('success');
