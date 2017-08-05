@@ -9,9 +9,7 @@ module.exports = function(app) {
 
   app.route({
     method: 'GET',
-    path: '/getTicket',
+    path: '/tickets',
     handler: handlers.get
   });
-
-
 }

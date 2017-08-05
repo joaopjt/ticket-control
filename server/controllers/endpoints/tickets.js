@@ -7,6 +7,61 @@ const axios = require('axios');
 module.exports = {
   validate(req, res) {
     const data = req.payload;
+
+    if(data.ticket) {
+      DB.select('tickets.id', 'tickets.avaiable', 'users.name', 'users.doc-number')
+        .table('tickets')
+        .where({
+          ticket_hash: data.ticket,
+          avaiable: 1
+        })
+        .innerJoin('users', 'tickets.user_id', 'users.id')
+        .limit(1)
+        .then(function(rows) {
+          const qr = rows[0];
+
+          if(qr.avaiable) {
+            DB('tickets')
+              .where({
+                id: qr.id
+              })
+              .update({
+                avaiable: 0
+              })
+              .then(function(up) {
+                const reply = {
+                  message: 'Ticket validated with success',
+                  data: {
+                    user: {
+                      name: qr.name,
+                      doc: qr['doc-number']
+                    }
+                  }
+                };
+
+                res(reply).code(200);
+              })
+              .catch(function(err) {
+                const reply = Boom.badImplementation('Internal server error at upate ticket status.');
+                console.log('ERROR AT UPDATE', err);
+
+                res(reply);
+              });
+          }
+        })
+        .catch(function(err) {
+          const reply = Boom.unauthorized('Ticket not found or invalid.');
+          res(reply);
+        });
+
+    } else {
+      const reply = Boom.badData('Ticket code is empty.');
+      res(reply);
+    }
+  },
+
+  validateByUpload(req, res) {
+    const data = req.payload;
     const file = data.qr;
 
     if (file) {
@@ -40,7 +95,7 @@ module.exports = {
   },
 
   get(req, res) {
-    let hash = (typeof req.query.hash === 'string') ? req.query.hash : res({ message: 'Invalid hash sended', details: 'Request hash should be an string.'}).code(400);
+    let hash = (typeof req.query.hash === 'string') ? req.query.hash : res({ message: 'Invalid hash sended', details: 'Request data should be an string.'}).code(400);
 
     axios.request('https://chart.googleapis.com/chart', {
       params: {
