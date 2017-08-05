@@ -6,7 +6,7 @@ exports.up = function(knex, Promise) {
     table.foreign('user_id').references('users.id');
     table.string('event');
     table.string('ticket_hash');
-    table.string('avaiable');
+    table.boolean('avaiable');
   }).then(function() {
     console.log('Table "tickets" created with success!');
   }).catch(function(err) {
