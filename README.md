@@ -24,8 +24,8 @@ To access this in controllers, you can use the `DB`, since he is being stored in
 var users = DB.select().from('users');
 ```
 
-## Last Considers
-> **THIS IS NOT PRODUCTION READY (A much of security known issues not fixed)**
+## Latest Considerations
+> **THIS IS NOT PRODUCTION READY**
 The project is for study reasons only.
 A Mainly using:
 - Hapi as http server framework
