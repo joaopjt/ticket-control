@@ -19,7 +19,7 @@
     "hapi-require-https": "^2.1.0",
     "inert": "^4.2.1",
     "instascan": "^1.0.0",
-    "knex": "^0.13.0",
+    "knex": "^0.14.3",
     "mysql": "^2.13.0",
     "npm-run-all": "^4.0.2",
     "object-assign": "^4.1.1",
