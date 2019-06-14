@@ -9,10 +9,12 @@
     "build": "cross-env NODE_ENV='prod' webpack",
     "dev": "npm-run-all --parallel server watch",
     "server": "nodemon --watch server ./index.js",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.18.1",
     "consign": "^0.1.6",
     "crypto-js": "^3.1.9-1",
     "hapi": "^17.0.0",
@@ -23,7 +25,8 @@
     "mysql": "^2.14.0",
     "npm-run-all": "^4.0.2",
     "object-assign": "^4.1.1",
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "snyk": "^1.178.1"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
@@ -37,5 +40,6 @@
     "style-loader": "^0.18.2",
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.6.1"
-  }
+  },
+  "snyk": true
 }
