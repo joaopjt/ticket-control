@@ -12,7 +12,7 @@
     "watch": "webpack --watch"
   },
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "consign": "^0.1.6",
     "crypto-js": "^3.1.9-1",
     "hapi": "^17.0.0",
